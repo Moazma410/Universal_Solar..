@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hybrid Residential Inverters |New Universal Solar and Traders </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  
+
+
+body.watermark {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body.watermark::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: url("logo.png") no-repeat center center;
+    background-size: 45%;   /* Adjust logo size */
+
+    opacity: 0.08;          /* Watermark effect */
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+/* ===== Brand banner (passing loop, right to left, continuous) ===== */
+.brand-banner {
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(90deg, #000000, #1a1006 50%, #000000);
+    border-top: 2px solid #ea580c;
+    border-bottom: 4px solid #ea580c;
+    padding: 9px 0;
+    box-shadow: inset 0 0 24px rgba(249,115,22,0.18);
+}
+.brand-banner-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 36px;
+    animation: brandBannerScroll 9s linear infinite;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+
+    background: linear-gradient(90deg, #f97316, #fde68a, #f97316);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 14px rgba(249,115,22,0.55);
+    animation: brandBannerScroll 9s linear infinite, brandBannerShimmer 2s linear infinite;
+}
+.brand-banner-track b {
+    display: inline-block;
+    color: #fde68a;
+    -webkit-text-fill-color: #fde68a;
+    text-shadow: 0 0 8px rgba(253,230,138,0.9);
+    font-weight: 400;
+    animation: brandBannerPulse 1.6s ease-in-out infinite;
+}
+@keyframes brandBannerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.3333%); }
+}
+@keyframes brandBannerShimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+@keyframes brandBannerPulse {
+    0%, 100% { opacity: 0.6; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* ===== Footer (added) ===== */
+:root{
+    --dark-red: #c2410c;
+    --royal-blue: #f97316;
+    --royal-blue-deep: #ea580c;
+}
+.footer-sun {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 260px;
+    height: 260px;
+    opacity: 0.06;
+    animation: sunSpin 40s linear infinite;
+    pointer-events: none;
+}
+@keyframes sunSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+.footer-link {
+    position: relative;
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+    width: fit-content;
+}
+.footer-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--dark-red), var(--royal-blue));
+    transition: width 0.3s ease;
+}
+.footer-link:hover {
+    color: #ffffff;
+}
+.footer-link:hover::after {
+    width: 100%;
+}
+.social-icon {
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.social-icon:hover {
+    transform: translateY(-4px);
+}
+</style>
+
+<body class="bg-gray-50 text-gray-800 watermark ">
+
+ <section class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-12 px-4 text-center relative stick">
+
+  <!-- Back Home Button -->
+  <a href="res.html"
+     class="back-home-btn absolute top-4 right-4 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold
+            shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+    Back Home
+  </a>
+
+  <h1 class="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-wide min-h-[1.3em] break-words">
+    <span id="brandTypingText"></span><span class="dealer-typing-cursor">|</span>
+  </h1>
+  <h2 class="text-base sm:text-xl md:text-2xl font-semibold mt-2">Inverex Solar Energy</h2>
+
+</section>
+
+<div class="brand-banner">
+  <div class="brand-banner-track">
+    <span>Authorized Representator of Inverex</span><b>&#9670;</b>
+    <span>New Universal Solar and Traders</span><b>&#9670;</b>
+    <span>Authorized Representator of Inverex</span><b>&#9670;</b>
+    <span>New Universal Solar and Traders</span><b>&#9670;</b>
+    <span>Authorized Representator of Inverex</span><b>&#9670;</b>
+    <span>New Universal Solar and Traders</span><b>&#9670;</b>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <!-- CATEGORIES -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold mb-6">RESIDENTIAL INVERTER CATEGORIES</h2>
+
+     <div class="grid md:grid-cols-3 gap-6">
+<!-- CLICKABLE CARD -->
+<a href="hyb.html"
+   class="bg-white p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out block
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)] 
+   bg-white p-6 rounded-xl shadow-lg block
+          transition-all duration-500 ease-out
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          hover:-translate-y-2
+          focus:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          focus:-translate-y-2
+          focus:outline-none
+          active:scale-95">
+    <h3 class="text-xl font-bold">NITROX </h3>
+    <p class="text-sm text-gray-600 mt-2">
+      Clean energy for a brighter home.
+    </p>
+</a>
+
+<a href="yuk.html"
+   class="bg-white p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out block
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]   bg-white p-6 rounded-xl shadow-lg block
+          transition-all duration-500 ease-out
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          hover:-translate-y-2
+          focus:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          focus:-translate-y-2
+          focus:outline-none
+          active:scale-95">
+    <h3 class="text-xl font-semibold
+    ">YUKON</h3>
+    <p class="text-sm text-gray-600 mt-2">
+       Powering businesses with sustainable solar solutions.
+    </p>
+</a>
+      
+
+
+
+
+<a href="vey.html"
+   class="bg-white p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out block
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]   bg-white p-6 rounded-xl shadow-lg block
+          transition-all duration-500 ease-out
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          hover:-translate-y-2
+          focus:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          focus:-translate-y-2
+          focus:outline-none
+          active:scale-95">
+    <h3 class="text-xl font-bold ">VEYRON</h3>
+    <p class="text-sm text-gray-600 mt-2">
+       Powering businesses with sustainable solar solutions.
+    </p>
+</a>
+    </div>
+  </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<footer class="relative overflow-hidden bg-gray-900 border-t-4 border-[#c2410c] pt-16 pb-6 px-5">
+
+    <!-- decorative rotating sun watermark -->
+    <svg class="footer-sun" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="18" fill="#f97316"/>
+        <g stroke="#f97316" stroke-width="4" stroke-linecap="round">
+            <line x1="50" y1="2" x2="50" y2="16"/>
+            <line x1="50" y1="84" x2="50" y2="98"/>
+            <line x1="2" y1="50" x2="16" y2="50"/>
+            <line x1="84" y1="50" x2="98" y2="50"/>
+            <line x1="14" y1="14" x2="24" y2="24"/>
+            <line x1="76" y1="76" x2="86" y2="86"/>
+            <line x1="14" y1="86" x2="24" y2="76"/>
+            <line x1="76" y1="24" x2="86" y2="14"/>
+        </g>
+    </svg>
+
+    <div class="max-w-6xl mx-auto relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <!-- Brand -->
+        <div>
+            <div class="flex items-center gap-3 mb-4">
+                <img src="logo.png" class="h-12 w-12" alt="NUST logo">
+                <span class="text-white font-bold text-lg leading-tight">New Universal<br>Solar And Traders</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+                Delivering sustainable power solutions for a brighter tomorrow — on-grid, off-grid, and hybrid systems built to last.
+            </p>
+            <div class="flex gap-3">
+                <a href="https://www.facebook.com/share/1Ep6N6padc/" target="_blank" rel="noopener" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-[#f97316] text-white hover:bg-[#f97316]">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/new_universal_solar_and_trader" target="_blank" rel="noopener" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-[#c2410c] text-white hover:bg-[#c2410c]">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.4.4a5 5 0 0 1 1.8 1.2 5 5 0 0 1 1.2 1.8c.2.6.4 1.3.4 2.4.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.4 2.4a5 5 0 0 1-1.2 1.8 5 5 0 0 1-1.8 1.2c-.6.2-1.3.4-2.4.4-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.4-.4a5 5 0 0 1-1.8-1.2 5 5 0 0 1-1.2-1.8c-.2-.6-.4-1.3-.4-2.4C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.4-2.4a5 5 0 0 1 1.2-1.8 5 5 0 0 1 1.8-1.2c.6-.2 1.3-.4 2.4-.4C8.9 2 9.3 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg>
+                </a>
+                <a href="mailto:infonustsolar@gmail.com" target="_blank" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-[#f97316] text-white hover:bg-[#f97316]">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1a13 13 0 0 1-4.4-2.7 12.6 12.6 0 0 1-2.6-3.6c-.4-.9-.1-1.4.2-1.8l.6-.7c.2-.2.3-.4.1-.8L7 5.4c-.2-.4-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4C4.4 6 4 6.9 4 8s.5 2.3 1.1 3.2a15 15 0 0 0 6.5 5.9c.9.4 1.6.6 2.2.8.9.2 1.7.2 2.4.1.7-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3l-.4-.2Z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="text-white font-bold text-lg mb-5 tracking-wide">Quick Links</h3>
+            <div class="flex flex-col gap-3 text-sm">
+                <a href="home.html" target="_blank" class="footer-link">About Us</a>
+                <a href="All pro.html" target="_blank" class="footer-link">All Products</a>
+                <a href="services.html" target="_blank" class="footer-link">Services</a>
+                <a href="solar cal.html" target="_blank" class="footer-link">Solar System Calculator</a>
+                <a href="NEWI.html" target="_blank" class="footer-link">New Invention</a>
+                <a href="contact.html" target="_blank" class="footer-link">Contact</a>
+
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+            <h3 class="text-white font-bold text-lg mb-5 tracking-wide">Our Services</h3>
+            <div class="flex flex-col gap-3 text-sm">
+                <span class="footer-link">On-Grid Solar Systems</span>
+                <span class="footer-link">Hybrid Solar Systems</span>
+                <span class="footer-link">Battery Storage Solutions</span>
+                <span class="footer-link">Installation &amp; Maintenance</span>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h3 class="text-white font-bold text-lg mb-5 tracking-wide">Get In Touch</h3>
+            <div class="flex flex-col gap-4 text-sm text-slate-400">
+                <div class="flex items-start gap-3">
+                    <span class="text-[#f97316] mt-0.5">📍</span>
+                    <span>3 floor khan Plaza,Westridge 1, Rawalpindi </span>
+                </div>
+                 <div class="flex items-start gap-3">
+                    <span class="text-[#f97316] mt-0.5">📍</span>
+                    <span>G1 Ground Floor Qadeer Zia Plaza College Road Rawalpindi</span>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-[#f97316] mt-0.5">📞</span>
+                    <span>+92 3122555044 </span>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-[#f97316] mt-0.5">✉️</span>
+                    <span>info@nustsolargmail.com</span>
+                </div>
+                <a href="https://wa.me/923122555044?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20solar%20solutions." target="_blank" rel="noopener" class="mt-1 inline-block text-center bg-[#c2410c] hover:bg-[#ea580c] text-white text-sm font-semibold px-5 py-2.5 rounded-full border-2 border-[#f97316] transition duration-300 w-fit">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500 relative">
+        <p>&copy; <span id="footerYear"></span> New Universal Solar And Traders. All rights reserved.</p>
+        <div class="flex gap-6">
+            <a href="#" target="_blank" class="footer-link">Privacy Policy</a>
+            <a href="#" target="_blank" class="footer-link">Terms of Service</a>
+        </div>
+    </div>
+
+</footer>
+
+<script>
+    const footerYearEl = document.getElementById('footerYear');
+    if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+</script>
+
+
+<script>
+    // ===== Header typing loop: types "New Universal Solar and Traders",
+    // pauses, erases it, pauses, then repeats forever. =====
+    const BRAND_TYPING_TEXT = "New Universal Solar and Traders";
+    const BRAND_TYPING_SPEED_MS = 90;   // ms per character while typing
+    const BRAND_ERASING_SPEED_MS = 45;  // ms per character while erasing
+    const BRAND_PAUSE_FULL_MS = 1600;   // pause once fully typed
+    const BRAND_PAUSE_EMPTY_MS = 500;   // pause once fully erased
+
+    function startBrandTyping() {
+        const el = document.getElementById('brandTypingText');
+        if (!el) return;
+
+        let i = 0;
+        let typing = true;
+
+        function step() {
+            const target = document.getElementById('brandTypingText');
+            if (!target) return;
+
+            if (typing) {
+                i++;
+                target.textContent = BRAND_TYPING_TEXT.slice(0, i);
+                if (i >= BRAND_TYPING_TEXT.length) {
+                    typing = false;
+                    setTimeout(step, BRAND_PAUSE_FULL_MS);
+                    return;
+                }
+                setTimeout(step, BRAND_TYPING_SPEED_MS);
+            } else {
+                i--;
+                target.textContent = BRAND_TYPING_TEXT.slice(0, i);
+                if (i <= 0) {
+                    typing = true;
+                    setTimeout(step, BRAND_PAUSE_EMPTY_MS);
+                    return;
+                }
+                setTimeout(step, BRAND_ERASING_SPEED_MS);
+            }
+        }
+
+        step();
+    }
+
+    document.addEventListener('DOMContentLoaded', startBrandTyping);
+  </script>
+</body>
+</html>
