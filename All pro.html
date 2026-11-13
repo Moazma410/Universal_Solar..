@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New universal Solar & Traders </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  
+
+
+
+
+body.watermark {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body.watermark::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: url("logo.png") no-repeat center center;
+    background-size: 45%;   /* Adjust logo size */
+
+    opacity: 0.08;          /* Watermark effect */
+    z-index: -1;
+
+    pointer-events: none;
+
+
+
+}
+
+/* ===== Header: brand name / product line / typing loop ===== */
+.dealer-typing-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: dealerCursorBlink 0.8s steps(1) infinite;
+}
+@keyframes dealerCursorBlink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* ===== Header responsiveness ===== */
+@media (max-width: 480px) {
+    .back-home-btn {
+        position: static;
+        display: inline-block;
+        margin: 0 auto 14px;
+    }
+}
+
+/* ===== Brand banner (passing loop, right to left, continuous) ===== */
+.brand-banner {
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(90deg, #000000, #1a1006 50%, #000000);
+    border-top: 2px solid #ea580c;
+    border-bottom: 4px solid #ea580c;
+    padding: 9px 0;
+    box-shadow: inset 0 0 24px rgba(249,115,22,0.18);
+}
+.brand-banner-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 36px;
+    animation: brandBannerScroll 9s linear infinite;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+
+    background: linear-gradient(90deg, #f97316, #fde68a, #f97316);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 14px rgba(249,115,22,0.55);
+    animation: brandBannerScroll 9s linear infinite, brandBannerShimmer 2s linear infinite;
+}
+.brand-banner-track b {
+    display: inline-block;
+    color: #fde68a;
+    -webkit-text-fill-color: #fde68a;
+    text-shadow: 0 0 8px rgba(253,230,138,0.9);
+    font-weight: 400;
+    animation: brandBannerPulse 1.6s ease-in-out infinite;
+}
+@keyframes brandBannerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.3333%); }
+}
+@keyframes brandBannerShimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+@keyframes brandBannerPulse {
+    0%, 100% { opacity: 0.6; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+</style>
+
+<body class="bg-gray-50 text-gray-800 watermark ">
+
+ <section class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-12 px-4 text-center relative stick">
+
+  <!-- Back Home Button -->
+  <a href="index.html"
+     class="back-home-btn absolute top-4 right-4 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold
+            shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+    Back Home
+  </a>
+
+  <h1 class="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-wide min-h-[1.3em] break-words">
+    <span id="brandTypingText"></span><span class="dealer-typing-cursor">|</span>
+  </h1>
+  <h2 class="text-base sm:text-xl md:text-2xl font-semibold mt-2">Inverex Solar Energy</h2>
+
+</section>
+
+<div class="brand-banner">
+  <div class="brand-banner-track">
+    <span>Authorized Representator of Inverex</span><b>&#9670;</b>
+    <span>New Universal Solar and Traders</span><b>&#9670;</b>
+    <span>Authorized Representator of Inverex</span><b>&#9670;</b>
+    <span>New Universal Solar and Traders</span><b>&#9670;</b>
+    <span>Authorized Representator of Inverex</span><b>&#9670;</b>
+    <span>New Universal Solar and Traders</span><b>&#9670;</b>
+  </div>
+</div>
+
+
+
+<!-- CATEGORIES -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold mb-6">Product Categories</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- Residential Inverter -->
+    <a href="res.html">
+    <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition   bg-white p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out block
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]   bg-white p-6 rounded-xl shadow-lg block
+          transition-all duration-500 ease-out
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          hover:-translate-y-2
+          focus:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          focus:-translate-y-2
+          focus:outline-none
+          active:scale-95">
+        <img src="iconr.png " 
+             alt="Residential Solar"
+             class="w-36 h-33 object-contain mx-auto mb-5">
+
+        <h3 class="text-2xl font-bold text-gray-800">
+            Residential Inverter
+        </h3>
+
+        <p class="text-gray-600 mt-3">
+            Reliable and energy-efficient inverter solutions designed to power your home with maximum performance and lower electricity costs.
+        </p>
+    </div>
+</a>
+    <!-- Commercial Inverter -->
+    <a href="com.html"  >
+    <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition  bg-white p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out block
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]   bg-white p-6 rounded-xl shadow-lg block
+          transition-all duration-500 ease-out
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          hover:-translate-y-2
+          focus:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          focus:-translate-y-2
+          focus:outline-none
+          active:scale-95">
+        <img src="iconc.png"
+             alt="Commercial Solar"
+             class="w-36 h-33 object-contain mx-auto mb-5">
+
+        <h3 class="text-2xl font-bold text-gray-800">
+            Commercial Inverter
+        </h3>
+
+        <p class="text-gray-600 mt-3">
+            High-capacity inverter systems built to deliver stable, efficient, and cost-effective power for commercial operations.
+        </p>
+    </div>
+</a>
+</div>
+
+
+     <div class="grid md:grid-cols-2 gap-6 mt-10">
+<!-- CLICKABLE CARD -->
+<a href="batteries.html"  >
+    <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition bg-white p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out block
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]   bg-white p-6 rounded-xl shadow-lg block
+          transition-all duration-500 ease-out
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          hover:-translate-y-2
+          focus:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          focus:-translate-y-2
+          focus:outline-none
+          active:scale-95" >
+        <img src="ba.png"
+             alt="Commercial Solar"
+             class="w-36 h-33 object-contain mx-auto mb-5">
+
+        <h3 class="text-2xl font-bold text-gray-800">
+            Batteries
+        </h3>
+
+        <p class="text-gray-600 mt-3">
+            High-capacity inverter systems built to deliver stable, efficient, and cost-effective power for commercial operations.
+        </p>
+    </div><p></p>
+</a>
+
+<a href="panels.html"  >
+    <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition bg-white p-6 rounded-xl shadow-lg transition-all duration-500 ease-in-out block
+          hover:-translate-y-2 hover:scale-105
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]   bg-white p-6 rounded-xl shadow-lg block
+          transition-all duration-500 ease-out
+          hover:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          hover:-translate-y-2
+          focus:shadow-[0_20px_50px_rgba(249,115,22,0.45)]
+          focus:-translate-y-2
+          focus:outline-none
+          active:scale-95" >
+        <img src="pn.png"
+             alt="Commercial Solar"
+             class="w-36 h-33 object-contain mx-auto mb-5">
+
+        <h3 class="text-2xl font-bold text-gray-800">
+            Panel
+        </h3>
+
+        <p class="text-gray-600 mt-3">
+            High-capacity inverter systems built to deliver stable, efficient, and cost-effective power for commercial operations.
+        </p>
+    </div>
+</a>
+  
+  
+      
+    </div>
+
+  </section>
+
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2026 Inverex Solar Energy
+  </footer>
+
+  <script>
+    // ===== Header typing loop: types "New Universal Solar and Traders",
+    // pauses, erases it, pauses, then repeats forever. =====
+    const BRAND_TYPING_TEXT = "New Universal Solar and Traders";
+    const BRAND_TYPING_SPEED_MS = 90;   // ms per character while typing
+    const BRAND_ERASING_SPEED_MS = 45;  // ms per character while erasing
+    const BRAND_PAUSE_FULL_MS = 1600;   // pause once fully typed
+    const BRAND_PAUSE_EMPTY_MS = 500;   // pause once fully erased
+
+    function startBrandTyping() {
+        const el = document.getElementById('brandTypingText');
+        if (!el) return;
+
+        let i = 0;
+        let typing = true;
+
+        function step() {
+            const target = document.getElementById('brandTypingText');
+            if (!target) return;
+
+            if (typing) {
+                i++;
+                target.textContent = BRAND_TYPING_TEXT.slice(0, i);
+                if (i >= BRAND_TYPING_TEXT.length) {
+                    typing = false;
+                    setTimeout(step, BRAND_PAUSE_FULL_MS);
+                    return;
+                }
+                setTimeout(step, BRAND_TYPING_SPEED_MS);
+            } else {
+                i--;
+                target.textContent = BRAND_TYPING_TEXT.slice(0, i);
+                if (i <= 0) {
+                    typing = true;
+                    setTimeout(step, BRAND_PAUSE_EMPTY_MS);
+                    return;
+                }
+                setTimeout(step, BRAND_ERASING_SPEED_MS);
+            }
+        }
+
+        step();
+    }
+
+    document.addEventListener('DOMContentLoaded', startBrandTyping);
+  </script>
+
+</body>
+</html>

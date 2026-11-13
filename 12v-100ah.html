@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverex Lithium-Ion Battery 12V 100Ah | New Universal Solar and Traders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root{
+        --cyan:#0891B2;
+        --cyan-soft:#22D3EE;
+        --violet:#7C3AED;
+        --violet-soft:#A78BFA;
+        --lime:#65A30D;
+        --bg-1:#F4F7FC;
+        --bg-2:#ECEFFA;
+        --panel: rgba(255,255,255,0.72);
+        --panel-strong: rgba(255,255,255,0.9);
+        --border: rgba(15,23,42,0.09);
+        --text:#0F172A;
+        --text-muted:#52607A;
+        --text-faint:#94A3B8;
+        --radius:20px;
+        --mono:'JetBrains Mono', monospace;
+    }
+    *{ font-family:'Manrope', sans-serif; box-sizing:border-box; }
+    h1,h2,h3,.brand-text{ font-family:'Sora', sans-serif; }
+    html{ scroll-behavior:smooth; }
+    body{
+        background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+        color: var(--text); overflow-x:hidden; position:relative;
+    }
+    @media (prefers-reduced-motion: reduce){
+        html{ scroll-behavior:auto; }
+        *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+    }
+    :focus-visible{ outline:2px solid var(--violet); outline-offset:3px; }
+
+    /* ---------- Ambient circuit-trace background (signature motion) ---------- */
+    .circuit-bg{
+        position: fixed; inset:0; z-index:-1; pointer-events:none; opacity:0.5;
+    }
+    .circuit-bg path{
+        fill:none; stroke-width:1.4; stroke-dasharray: 6 10;
+        animation: flow 5s linear infinite;
+    }
+    .circuit-bg .c1{ stroke: var(--cyan-soft); animation-duration: 6s; }
+    .circuit-bg .c2{ stroke: var(--violet-soft); animation-duration: 8s; animation-direction: reverse; }
+    .circuit-bg .c3{ stroke: var(--cyan-soft); animation-duration: 10s; }
+    @keyframes flow{ to{ stroke-dashoffset: -160; } }
+    .circuit-bg circle{ fill: var(--violet-soft); opacity:0.5; }
+
+    /* ---------- Brand / Nav ---------- */
+    .brand-text{
+        font-size: 22px; font-weight:800; letter-spacing:.5px; white-space:nowrap;
+        background: linear-gradient(90deg, var(--cyan), var(--violet), var(--cyan));
+        background-size: 200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+        animation: shine 3s linear infinite;
+    }
+    @keyframes shine{ to{ background-position:200% center; } }
+    .navbar{ background: rgba(255,255,255,0.75); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .nav-link{ color: var(--text); font-weight:600; font-size:14px; transition:color .25s ease; }
+    .nav-link:hover{ color: var(--violet); }
+
+    /* Mobile dropdown (NOT an offcanvas — inline panel under the navbar) */
+    .mobile-toggle{
+        display:none; width:38px; height:38px; border-radius:10px; border:1px solid var(--border);
+        background: var(--panel-strong); align-items:center; justify-content:center; cursor:pointer;
+    }
+    .mobile-toggle svg{ width:18px; height:18px; }
+    .mobile-menu{
+        display:none; grid-template-columns:1fr; gap:2px; padding: 10px 4px 14px;
+        border-top: 1px solid var(--border);
+    }
+    .mobile-menu.open{ display:grid; }
+    .mobile-menu a{
+        padding: 12px 10px; border-radius:10px; font-weight:600; font-size:14px; color:var(--text);
+    }
+    .mobile-menu a:hover{ background: rgba(124,58,237,0.08); color: var(--violet); }
+    @media (max-width: 1023px){ .mobile-toggle{ display:flex; } }
+
+    .btn-glow{
+        position: relative; overflow:hidden; isolation:isolate;
+        background: linear-gradient(135deg, var(--cyan), var(--violet)); color:#fff; font-weight:700;
+        padding:14px 30px; border-radius:999px; box-shadow: 0 10px 26px -10px rgba(124,58,237,0.55);
+        transition: transform .25s ease, box-shadow .25s ease; display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn-glow:hover{ transform: translateY(-3px) scale(1.04); box-shadow: 0 16px 34px -8px rgba(124,58,237,0.65); }
+    .btn-glow::before{
+        content:""; position:absolute; inset:0; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+        transform: translateX(-150%) skewX(-20deg); transition: transform .7s ease; z-index:-1;
+    }
+    .btn-glow:hover::before{ transform: translateX(150%) skewX(-20deg); }
+    .btn-outline{
+        padding:14px 30px; border-radius:999px; border:1px solid var(--border); font-weight:700; color: var(--text);
+        background: var(--panel); transition: all .25s ease; display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn-outline:hover{ background: #fff; border-color: var(--violet); color: var(--violet); }
+
+    .crumb a{ color: var(--text-muted); transition: color .2s ease; }
+    .crumb a:hover{ color: var(--violet); }
+
+    /* ---------- Product stage (3D tilt) ---------- */
+    .product-stage{
+        position: relative;
+        background: radial-gradient(ellipse at center, rgba(34,211,238,0.14), transparent 70%), var(--panel-strong);
+        border: 1px solid var(--border); border-radius: 24px; aspect-ratio: 1/1;
+        display:flex; align-items:center; justify-content:center; overflow:hidden;
+        box-shadow: 0 20px 50px -20px rgba(15,23,42,0.18);
+        transform-style: preserve-3d; transition: transform 0.12s ease-out, box-shadow 0.3s ease;
+        will-change: transform;
+    }
+    .product-stage:hover{ box-shadow: 0 28px 60px -18px rgba(124,58,237,0.3); }
+    .product-stage .glow-ring{
+        position:absolute; width:70%; height:70%; border-radius:50%;
+        background: radial-gradient(circle, rgba(124,58,237,0.16), transparent 70%);
+        animation: ringPulse 4s ease-in-out infinite;
+    }
+    @keyframes ringPulse{ 0%,100%{ transform:scale(1); opacity:.6;} 50%{ transform:scale(1.12); opacity:1;} }
+    .product-stage img{
+        position: relative; z-index: 2; max-width: 78%; max-height: 78%; object-fit: contain;
+        filter: drop-shadow(0 20px 30px rgba(15,23,42,0.2)); transition: transform .5s ease;
+    }
+    .placeholder-box{ position:relative; z-index:2; text-align:center; color: var(--text-faint); display:flex; flex-direction:column; align-items:center; gap:10px; }
+    .placeholder-box svg{ width:56px; height:56px; opacity:.5; }
+    .placeholder-box span{ font-size: 13px; font-weight:600; }
+
+    .stars{ color: var(--violet); letter-spacing:2px; }
+
+    .check-item{ display:flex; align-items:flex-start; gap:12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .check-item:last-child{ border-bottom:none; }
+    .check-icon{
+        flex-shrink:0; width:22px; height:22px; border-radius:50%;
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+        display:flex; align-items:center; justify-content:center; box-shadow: 0 0 12px rgba(124,58,237,0.35); margin-top:2px;
+    }
+    .check-icon svg{ width:13px; height:13px; stroke:#fff; }
+
+    /* ---------- Info cards (3D tilt) ---------- */
+    .info-card{
+        background: var(--panel); border: 1px solid var(--border); border-radius: 18px; padding: 28px;
+        transform-style: preserve-3d; transition: transform 0.12s ease-out, box-shadow .3s ease, border-color .3s ease;
+        will-change: transform;
+    }
+    .info-card:hover{ border-color: rgba(124,58,237,0.35); box-shadow: 0 20px 45px -18px rgba(124,58,237,0.28); }
+
+    .price-tag{ background: linear-gradient(90deg, var(--cyan), var(--lime)); -webkit-background-clip:text; background-clip:text; color:transparent; font-family: var(--mono); }
+
+    .spec-table{ font-family: var(--mono); }
+    .spec-table tr{ border-bottom: 1px solid var(--border); }
+    .spec-table td{ padding: 12px 8px; }
+    .spec-table td:first-child{ color: var(--text-muted); font-weight:600; width:45%; font-family:'Manrope', sans-serif; }
+    .spec-table td:last-child{ color: var(--text); font-weight:600; }
+    .spec-table tr{ transition: background .2s ease; }
+    .spec-table tr:hover{ background: rgba(124,58,237,0.05); }
+    .spec-table tr:hover td:last-child{ color: var(--violet); }
+
+    .reveal{ opacity:0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in-view{ opacity:1; transform:translateY(0); }
+
+    .section-eyebrow{ font-family: var(--mono); }
+body.watermark {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body.watermark::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: url("logo.png") no-repeat center center;
+    background-size: 45%;   /* Adjust logo size */
+
+    opacity: 0.08;          /* Watermark effect */
+    z-index: -1;
+
+    pointer-events: none;
+}
+</style>
+
+<body class="bg-gray-50 text-gray-800 watermark">
+
+    <svg class="circuit-bg" viewBox="0 0 1200 900" preserveAspectRatio="none" aria-hidden="true">
+        <path class="c1" d="M-20 120 H320 L380 180 H700 L760 120 H1220"></path>
+        <path class="c2" d="M-20 420 H220 L280 480 H560 L620 420 H900 L960 480 H1220"></path>
+        <path class="c3" d="M-20 700 H420 L480 640 H820 L880 700 H1220"></path>
+        <circle cx="320" cy="120" r="3"></circle>
+        <circle cx="700" cy="120" r="3"></circle>
+        <circle cx="620" cy="420" r="3"></circle>
+        <circle cx="480" cy="640" r="3"></circle>
+    </svg>
+
+    <nav class="navbar sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <img class="h-[44px] w-[44px] object-contain" src="logo.png" alt="logo" onerror="this.style.display='none'">
+                    <div class="brand-text">NUST</div>
+                </div>
+                <div class="hidden lg:flex items-center gap-7">
+                    <a href="home.html" target="_blank" class="nav-link">Home</a>
+                    <a href="All pro.html" target="_blank" class="nav-link">All Products</a>
+                    <a href="services.html" target="_blank" class="nav-link">Services</a>
+                    <a href="solar cal.html" target="_blank" class="nav-link">Calculator</a>
+                    <a href="contact.html" target="_blank" class="nav-link">Contact</a>
+                </div>
+               <a href="#" onclick="openQuote('battery-12v-100ah');return false;" class="btn-glow !py-2 !px-5 text-sm hidden sm:inline-flex">Get a Quote</a>
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="menuIconPath" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="home.html" target="_blank">Home</a>
+                <a href="All pro.html" target="_blank">All Products</a>
+                <a href="services.html" target="_blank">Services</a>
+                <a href="solar cal.html" target="_blank">Calculator</a>
+                <a href="contact.html" target="_blank">Contact</a>
+               <a href="#" onclick="openQuote('battery-12v-100ah');return false;" class="btn-glow !py-2 !px-5 text-sm hidden sm:inline-flex">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 pt-6 text-sm crumb">
+        <a href="home.html" target="_blank">Home</a> /
+        <a href="All pro.html" target="_blank">Products</a> /
+        <a href="All pro.html" target="_blank">Lithium Batteries</a> /
+        <span class="text-slate-400">12V 100Ah Lithium Battery</span>
+    </div>
+
+    <section class="container mx-auto px-4 py-10 grid lg:grid-cols-2 gap-12 items-start reveal">
+        <div>
+            <div class="product-stage" id="productStage">
+                <div class="glow-ring"></div>
+                <img src="12v-100ah.png" alt="Inverex Lithium-Ion Battery 12V 100Ah" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="placeholder-box" style="display:none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="3" width="12" height="18" rx="2"/><rect x="10" y="1" width="4" height="2.4" rx="0.6"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
+                    <span>Product image coming soon</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <p class="section-eyebrow text-violet-600 font-bold text-xs tracking-widest mb-3" style="color:var(--violet);">LITHIUM-ION BATTERY &middot; INV-LV 12V-100AH</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold leading-tight" style="color:var(--text);">
+                Inverex Lithium-Ion Battery INV-LV 12V-100AH (1.28 kWh)
+            </h1>
+            <div class="flex items-center gap-2 mt-4">
+                <span class="stars">★★★★★</span>
+                <span class="text-sm" style="color:var(--text-muted);">(3 Customer rated)</span>
+            </div>
+            <p class="mt-5 leading-relaxed" style="color:var(--text-muted);">
+                A safe, long-lasting 100Ah LiFePO&#8324; (LFP) battery with a 1.28 kWh nominal energy, built-in circuit breaker and intelligent BMS. Compatible with any brand of inverter, with up to 6000+ cycles, a wide -20&deg;C to 55&deg;C temperature range and a 5-year warranty &mdash; ideal for backup power and residential use.
+            </p>
+            <div class="mt-7 flex items-baseline gap-3">
+                <span class="price-tag text-3xl font-extrabold">PKR 67,000 </span> <!-- TODO: set price (also in Q_PRODUCTS below) -->
+            </div>
+            <div class="mt-7 flex flex-wrap gap-4">
+                <a href="contact.html" target="_blank" class="btn-glow">Contact Us Now <span>→</span></a>
+                <a href="solar cal.html" target="_blank" class="btn-outline">Calculate Savings</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-6 grid lg:grid-cols-2 gap-8 reveal">
+        <div class="info-card">
+            <h2 class="text-xl font-bold mb-4" style="color:var(--text);">Product Details</h2>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Built-in 5A constant-current limit charge; compatible with <strong>any brand</strong> of inverter.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Safe, long-lasting <strong>LiFePO&#8324; (LFP)</strong> chemistry with built-in circuit breaker and intelligent BMS; eco-friendly materials.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Nominal <strong>12.8V / 100Ah (1.28 kWh)</strong> with 100A max continuous charge and discharge current.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Peak current of <strong>200A</strong> for 10 seconds for demanding start-up loads.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Flexible scalability &mdash; max. <strong>4 units in series</strong> (51.2V) and max. <strong>10 units in parallel</strong>.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Wide temperature range: charge 0 to 55&deg;C, discharge <strong>-20&deg;C to 55&deg;C</strong>.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Supports external power to avoid battery standby and allow direct recharge; RS485 for firmware updates.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>LED indicators (SOC, working, protecting) with buzzer alert.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>High power density &mdash; lightweight and compact (11 kg).</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Rated for <strong>6000+ cycles</strong> (25&deg;C, 0.2C, 80% DoD, 70% EOL).</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Floor-mounted or stack-mounted installation; certified UN38.3 and MSDS.</p></div>
+        </div>
+
+        <div class="space-y-8">
+            <div class="info-card">
+                <h2 class="text-xl font-bold mb-4" style="color:var(--text);">Technical Specifications</h2>
+                <table class="w-full spec-table text-sm">
+                    <tr><td>Model</td><td>INV-LV 12V-100AH</td></tr>
+                    <tr><td>Battery Chemistry</td><td>LiFePO&#8324; (Lithium Iron Phosphate)</td></tr>
+                    <tr><td>Nominal Capacity</td><td>100 Ah</td></tr>
+                    <tr><td>Nominal Voltage</td><td>12.8 V</td></tr>
+                    <tr><td>Operating Voltage</td><td>11.2 V ~ 14.6 V</td></tr>
+                    <tr><td>Nominal Energy</td><td>1.28 kWh</td></tr>
+                    <tr><td>Cell Configuration</td><td>Prismatic, 1P4S</td></tr>
+                    <tr><td>Scalability</td><td>Max. 4 units in series (51.2V) and Max. 10 units in parallel</td></tr>
+                    <tr><td>Charge Current (Max. Continuous)</td><td>100 A</td></tr>
+                    <tr><td>Charge Current (Peak)</td><td>200 A (10 sec)</td></tr>
+                    <tr><td>Discharge Current (Max. Continuous)</td><td>100 A</td></tr>
+                    <tr><td>Discharge Current (Peak)</td><td>200 A (10 sec)</td></tr>
+                    <tr><td>Recommended Depth of Discharge</td><td>80% DoD</td></tr>
+                    <tr><td>Dimensions (W x D x H)</td><td>310 x 160 x 298 mm</td></tr>
+                    <tr><td>Weight (Approx.)</td><td>11 kg</td></tr>
+                    <tr><td>Case Material</td><td>ABS+PC</td></tr>
+                    <tr><td>LED Indicator</td><td>LED (SOC, working, protecting) &amp; Buzzer</td></tr>
+                    <tr><td>Communication</td><td>RS485</td></tr>
+                    <tr><td>IP Rating of Enclosure</td><td>IP20</td></tr>
+                    <tr><td>Operating Temperature</td><td>Charge: 0 ~ 55&deg;C, Discharge: -20&deg;C ~ 55&deg;C</td></tr>
+                    <tr><td>Storage Temperature</td><td>0 ~ 35&deg;C</td></tr>
+                    <tr><td>Relative Humidity</td><td>95%</td></tr>
+                    <tr><td>Max. Operating Altitude</td><td>&le; 2000m</td></tr>
+                    <tr><td>Cycle Life</td><td>&ge; 6000 (25&deg;C&plusmn;2&deg;C, 0.2C charging and discharging, 80% DoD, 70% EOL)</td></tr>
+                    <tr><td>Warranty Period</td><td>5 years (2 years product + 3 years service warranty)*</td></tr>
+                    <tr><td>Installation</td><td>Floor-Mounted, Stack-Mounted</td></tr>
+                    <tr><td>Certification</td><td>UN38.3, MSDS</td></tr>
+                </table>
+                <p class="text-xs mt-3" style="color:var(--text-faint);">Test conditions: 25&deg;C&plusmn;2&deg;C, beginning of life, 0.2C charge &amp; 0.2C discharge, 100% DoD. Current is affected by temperature and SOC. *Conditions apply &mdash; refer to the Warranty Letter.</p>
+            </div>
+
+            <div class="info-card">
+                <h2 class="text-xl font-bold mb-4" style="color:var(--text);">Delivery &amp; Returns</h2>
+                <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Standard delivery within <strong>4–5 business days</strong> across Pakistan.</p></div>
+                <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p><strong>5-year</strong> warranty (2 years product + 3 years service warranty). Conditions apply.</p></div>
+                <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>Free installation support within city limits, with technician dispatch.</p></div>
+                <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><p>7-day replacement window for manufacturing defects.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-20 text-center reveal">
+        <h2 class="text-2xl sm:text-3xl font-extrabold mb-6" style="color:var(--text);">Ready to power your backup with the Inverex 100Ah Lithium Battery?</h2>
+        <a href="contact.html" target="_blank" class="btn-glow">Talk to Our Team</a>
+    </section>
+
+    <script>
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => io.observe(el));
+
+        // Mobile dropdown menu (inline, not offcanvas)
+        const toggle = document.getElementById('mobileToggle');
+        const menu = document.getElementById('mobileMenu');
+        toggle.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // 3D tilt on hover — product stage + info cards
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(!reduceMotion){
+            const tiltEls = document.querySelectorAll('#productStage, .info-card');
+            const maxTilt = 7;
+            tiltEls.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const px = (e.clientX - rect.left) / rect.width;
+                    const py = (e.clientY - rect.top) / rect.height;
+                    const rotY = (px - 0.5) * maxTilt * 2;
+                    const rotX = (0.5 - py) * maxTilt * 2;
+                    el.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-3px)`;
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+                });
+            });
+        }
+    </script>
+<script>
+/* =====================================================================
+   GET QUOTE POPUP  (New Universal Solar & Traders)
+   ---------------------------------------------------------------------
+   Each Get Quote button on this page calls:  openQuote('product-key')
+   The popup shows the A4 quotation (same layout as the solar calculator)
+   with name / phone / email / quantity fields, "Print / Save as PDF",
+   and "Send to admin on WhatsApp" (message: inputs, product, quantity,
+   price and warranty).
+
+   TO EDIT:
+     - Company details, logo ........... Q_COMPANY / Q_LOGO below
+     - Admin WhatsApp number ........... Q_ADMIN_WHATSAPP below
+     - Prices, names, specs, warranty .. Q_PRODUCTS below (key must match the button)
+     - Terms & notes ................... Q_TERMS / Q_NOTES below
+     - WhatsApp message wording ........ whatsappText() below
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  // ---------- Company & document settings ----------
+  var Q_COMPANY = {
+    name: "NEW UNIVERSAL SOLAR AND TRADERS",
+    tagline: "Authorized Supplier of Solar Inverters, Solar Panels & Lithium Ion Batteries",
+    address: "Qadeerzia Plaza, College Road, Rawalpindi",
+    phone: "0333-7592249"
+  };
+  var Q_LOGO = "logo.png";           // header logo + watermark (same folder as the pages)
+  var Q_VALID_DAYS = 30;
+  var Q_ADMIN_WHATSAPP = "923122555044";   // admin WhatsApp: 0312-2555044 (country code 92, no leading 0)
+
+  var Q_NOTES = [
+    "This is a preliminary quote. Final pricing may vary based on site inspection, installation complexity, and current market rates.",
+    "Quote valid for " + Q_VALID_DAYS + " days from the date above.",
+    "This quotation covers the item listed above only. Anything not listed (such as solar panels, mounting structure, installation, wiring, and transport) is not included."
+  ];
+
+  var Q_TERMS = [
+    ["Validity", "Quotation is valid for " + Q_VALID_DAYS + " days from the issue date. Prices may change after that."],
+    ["Payment", "As per agreed advance/delivery payment terms."],
+    ["Delivery", "System will be delivered per the agreed schedule after confirmation."],
+    ["GST", "Included in this quotation."],
+    ["Civil Work", "Any civil work is not included in this quotation and will be charged separately."],
+    ["Stock", "Products may change without prior notice — kindly confirm availability before finalizing."],
+    ["Transport", "Transport will be charged as per actual."]
+  ];
+
+  // Wording that changes with the kind of product
+  var Q_CATEGORIES = {
+    inverter: { title: "Solar Inverter Quotation",              code: "IN", warrantyItem: "Inverter",                      warrantyBrand: "Inverex Hybrid Inverter" },
+    hybrid:   { title: "Hybrid Inverter & Battery Quotation",   code: "HY", warrantyItem: "Hybrid Inverter with Battery",  warrantyBrand: "Inverex Hybrid Inverter" },
+    battery:  { title: "Battery Quotation",                     code: "BT", warrantyItem: "Battery",                       warrantyBrand: "Inverex Battery Power Wall" },
+    balcony:  { title: "Balcony Energy Storage Quotation",      code: "BL", warrantyItem: "Balcony Energy Storage System", warrantyBrand: "Inverex" },
+    ongrid:   { title: "On-Grid Inverter Quotation",            code: "OG", warrantyItem: "Inverter",                      warrantyBrand: "Inverex On-Grid Inverter" },
+    allinone: { title: "All-in-One Energy Storage Quotation",   code: "AE", warrantyItem: "All-in-One Energy Storage System", warrantyBrand: "Inverex" }
+  };
+
+  // ---------- Products (key = the value used in openQuote('key')) ----------
+  var Q_PRODUCTS = {
+    "battery-12v-100ah": {
+        "name": "Inverex Lithium Battery 12V 100Ah",
+        "price": 0,   /* TODO: set price in PKR */
+        "category": "battery",
+        "specs": [
+            "Capacity: 12.8V 100Ah (1.28 kWh)",
+            "Battery Type: LiFePO4, IP20",
+            "Max. continuous charge/discharge: 100A",
+            "Best for: Backup power & residential use"
+        ],
+        "warranty": "5 Years"
+    }
+};
+
+  // ---------- Helpers ----------
+  var current = null, timer = null;
+  function $(id) { return document.getElementById(id); }
+  function esc(t) {
+    return String(t == null ? "" : t).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmt(n) { return n.toLocaleString("en-PK"); }
+
+  // ---------- Current quotation values (used by the document and the WhatsApp message) ----------
+  function quoteInfo() {
+    var p = current, cat = Q_CATEGORIES[p.category] || Q_CATEGORIES.inverter;
+    var qty = Math.max(1, parseInt($("qInQty").value, 10) || 1);
+    var phone = $("qInPhone").value.trim();
+    var dateStr = new Date().toLocaleDateString("en-GB");            // dd/mm/yyyy
+    var digits = phone.replace(/\D/g, "");
+    return {
+      qty: qty, total: qty * p.price, dateStr: dateStr,
+      name: $("qInName").value.trim(), phone: phone, email: $("qInEmail").value.trim(),
+      ref: "Q-" + cat.code + "-" + dateStr.replace(/\//g, "") + "-" + (digits.slice(-4) || "0000")
+    };
+  }
+
+  // WhatsApp message to admin: customer inputs, product, quantity, price, warranty (*text* = bold in WhatsApp)
+  function whatsappText() {
+    var i = quoteInfo(), p = current;
+    var L = [];
+    L.push("*Quotation Request*");
+    L.push("");
+    L.push("Name: " + (i.name || "-"));
+    L.push("Phone: " + (i.phone || "-"));
+    L.push("Email: " + (i.email || "-"));
+    L.push("");
+    L.push("Product: " + p.name);
+    L.push("Quantity: " + i.qty);
+    L.push("Price: Rs. " + fmt(p.price));
+    L.push("*Total: Rs. " + fmt(i.total) + "*");
+    L.push("Warranty: " + p.warranty);
+    return L.join("\n");
+  }
+  function whatsappLink() {
+    return "https://wa.me/" + Q_ADMIN_WHATSAPP + "?text=" + encodeURIComponent(whatsappText());
+  }
+
+  function note(html) {
+    $("qSent").className = "mx-5 mb-3 p-3 rounded-lg bg-green-50 border border-green-300 text-sm text-green-900 text-center";
+    $("qSent").innerHTML = html;
+  }
+
+  // ---------- Quotation document (A4, same look as solar_cal.html) ----------
+  function buildHtml() {
+    var p = current, cat = Q_CATEGORIES[p.category] || Q_CATEGORIES.inverter;
+    var info = quoteInfo();
+    var qty = info.qty, total = info.total, dateStr = info.dateStr, quoteRef = info.ref;
+    var name = esc(info.name), phone = esc(info.phone), email = esc(info.email);
+    var specLine = esc(["Inverex"].concat(p.specs).join(" | "));
+
+    var notesHtml = Q_NOTES.map(function (n) { return "<p><strong>NOTE:</strong> " + esc(n) + "</p>"; }).join("");
+    var termsHtml = Q_TERMS.map(function (t) { return '<p><span class="label">' + esc(t[0]) + ":</span> " + esc(t[1]) + "</p>"; }).join("");
+    var blank = function (v) { return v ? "" : "blank"; };
+
+    return '<!DOCTYPE html>\n<html><head>\n<meta charset="UTF-8">\n' +
+'<title>Solar Quotation - ' + (name || "Customer") + '</title>\n<style>\n' +
+'  * { margin:0; padding:0; box-sizing:border-box; }\n' +
+'  @page { size: A4; margin: 6mm 8mm; }\n' +
+'  html, body { width: 100%; }\n' +
+"  body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; background: #fff; font-size: 14px; line-height:1.3; position: relative; }\n" +
+'  body::before { content:""; position: fixed; top:0; left:0; right:0; bottom:0; background-image: url(\'' + Q_LOGO + '\'); background-repeat:no-repeat; background-position:center; background-size:320px auto; opacity:0.15; pointer-events:none; z-index:0; }\n' +
+'  .top-bar { height:10px; background: linear-gradient(90deg, #8b1a1a 0%, #b71c1c 55%, #d32f2f 100%); position:relative; z-index:1; }\n' +
+'  .page { padding:6px 2px 2px; position:relative; z-index:1; }\n' +
+'  .header { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:4px; }\n' +
+'  .header-left { display:flex; align-items:center; gap:10px; }\n' +
+'  .header-left img { width:40px; height:40px; object-fit:contain; border-radius:50%; }\n' +
+'  .company h1 { font-size:1.02em; color:#111; letter-spacing:0.2px; margin-bottom:1px; }\n' +
+'  .company .tagline { color:#b71c1c; font-weight:700; font-size:0.74em; margin-bottom:3px; }\n' +
+'  .company p { font-size:0.76em; color:#444; margin:0; }\n' +
+'  .header-right { border:1.5px solid #b71c1c; border-radius:4px; min-width:190px; height:fit-content; }\n' +
+'  .header-right table { width:100%; border-collapse:collapse; }\n' +
+'  .header-right td { padding:2px 6px; font-size:0.68em; border-bottom:1px solid #eecccc; }\n' +
+'  .header-right tr:last-child td { border-bottom:none; }\n' +
+'  .header-right .k { font-weight:700; color:#b71c1c; white-space:nowrap; }\n' +
+'  .doc-title-strip { text-align:center; font-weight:700; font-size:0.78em; letter-spacing:0.3px; color:#b71c1c; margin:2px 0 4px; text-transform:uppercase; }\n' +
+'  .section-title { background:#b71c1c; color:#fff; font-weight:700; font-size:0.75em; padding:3px 8px; margin:5px 0 0; letter-spacing:0.2px; }\n' +
+'  table.items { width:100%; border-collapse:collapse; }\n' +
+'  table.items th { background:#b71c1c; color:#fff; padding:5px 7px; text-align:left; font-size:0.68em; font-weight:700; text-transform:uppercase; }\n' +
+'  table.items th.num, table.items td.num { text-align:right; }\n' +
+'  table.items td { padding:5px 7px; font-size:0.7em; border-bottom:1px solid #f3d9d9; font-weight:600; }\n' +
+'  table.items tr:nth-child(even) td { background:#fbeaea; }\n' +
+'  table.items tr.total-row td { background:#b71c1c !important; color:#fff; font-weight:700; font-size:0.85em; }\n' +
+'  .notes { margin-top:2px; }\n' +
+'  .notes p { font-size:0.65em; color:#333; margin:1px 0; }\n' +
+'  .warranty-table { width:100%; border-collapse:collapse; margin-top:5px; }\n' +
+'  .warranty-table th { background:#f3d9d9; color:#b71c1c; padding:2px 6px; text-align:left; font-size:0.68em; }\n' +
+'  .warranty-table td { padding:2px 6px; font-size:0.68em; border-bottom:1px solid #f3d9d9; }\n' +
+'  .terms p { font-size:0.66em; margin:1px 0; color:#333; }\n' +
+'  .terms .label { font-weight:700; color:#111; display:inline-block; min-width:95px; }\n' +
+'  .signature { margin-top:5px; font-size:0.68em; color:#222; line-height:1.3; }\n' +
+'  .thank-you { margin-top:5px; background:#b71c1c; color:#fff; text-align:center; font-weight:700; padding:4px; font-size:0.72em; letter-spacing:0.2px; }\n' +
+'  .customer-line { margin:3px 0 4px; display:inline-block; border:1.5px solid #b71c1c; border-radius:4px; padding:6px 12px; }\n' +
+'  .customer-line table { border-collapse:collapse; }\n' +
+'  .customer-line td { padding:2px 0; font-size:0.8em; font-weight:700; color:#111; white-space:nowrap; }\n' +
+'  .customer-line td.k { color:#b71c1c; padding-right:10px; }\n' +
+'  .customer-line td.blank { min-width:180px; border-bottom:1px solid #ddd; }\n' +
+'  @media print { html, body { height:100%; } .page { page-break-inside:avoid; } * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; } }\n' +
+'</style>\n</head><body>\n<div class="top-bar"></div>\n<div class="page">\n' +
+'<div class="header">\n  <div class="header-left">\n    <img src="' + Q_LOGO + '" alt="Logo" onerror="this.style.display=\'none\'">\n    <div class="company">\n' +
+'      <h1>' + esc(Q_COMPANY.name) + '</h1>\n      <div class="tagline">' + esc(Q_COMPANY.tagline) + '</div>\n' +
+'      <p>📍 ' + esc(Q_COMPANY.address) + '</p>\n      <p>📞 ' + esc(Q_COMPANY.phone) + '</p>\n    </div>\n  </div>\n' +
+'  <div class="header-right"><table>\n    <tr><td class="k">Date:</td><td>' + dateStr + '</td></tr>\n    <tr><td class="k">Quote Ref:</td><td>' + quoteRef + '</td></tr>\n  </table></div>\n</div>\n' +
+'<div class="customer-line"><table>\n' +
+'  <tr><td class="k">Name:</td><td class="' + blank(name) + '">' + name + '</td></tr>\n' +
+'  <tr><td class="k">Phone:</td><td class="' + blank(phone) + '">' + phone + '</td></tr>\n' +
+'  <tr><td class="k">Email:</td><td class="' + blank(email) + '">' + email + '</td></tr>\n</table></div>\n' +
+'<div class="doc-title-strip">' + esc(cat.title) + '</div>\n' +
+'<div class="section-title">Quotation For ' + esc(p.name) + '</div>\n' +
+'<table class="items">\n  <thead><tr><th>Item Details</th><th class="num">Qty</th><th class="num">Unit Price in Rs.</th><th class="num">Amount in Rs.</th></tr></thead>\n  <tbody>\n' +
+'    <tr>\n      <td>' + esc(p.name) + '<br><span style="font-weight:400;color:#777;font-size:0.9em;">' + specLine + '</span></td>\n' +
+'      <td class="num">' + qty + '</td>\n      <td class="num">' + fmt(p.price) + '</td>\n      <td class="num">' + fmt(total) + '</td>\n    </tr>\n' +
+'    <tr class="total-row"><td colspan="3" style="text-align:right;padding-right:14px;">Total</td><td class="num">' + fmt(total) + '</td></tr>\n  </tbody>\n</table>\n' +
+'<div class="notes">' + notesHtml + '</div>\n' +
+'<div class="section-title">Warranty</div>\n<table class="warranty-table">\n  <thead><tr><th>Product</th><th>Terms &amp; Conditions</th><th>Brand</th></tr></thead>\n  <tbody>\n' +
+'    <tr><td>' + esc(cat.warrantyItem) + '</td><td>' + esc(p.warranty) + '</td><td>' + esc(cat.warrantyBrand) + '</td></tr>\n  </tbody>\n</table>\n' +
+'<div class="section-title">Terms &amp; Conditions</div>\n<div class="terms" style="margin-top:8px;">' + termsHtml + '</div>\n' +
+'<div class="signature">Regards,<br><strong>New Universal Solar and Traders</strong><br>📞 ' + esc(Q_COMPANY.phone) + '</div>\n' +
+'<div class="thank-you">THANK YOU FOR CONSIDERING US FOR YOUR SOLAR ENERGY SOLUTION.</div>\n</div>\n</body></html>';
+  }
+
+  // ---------- Popup ----------
+  function render() {
+    if (!current) return;
+    $("qWa").href = whatsappLink();
+    var frame = $("qFrame");
+    frame.onload = function () {
+      try {
+        var h = frame.contentDocument.documentElement.scrollHeight;
+        if (h) frame.style.height = (h + 10) + "px";
+      } catch (e) {}
+    };
+    frame.srcdoc = buildHtml();
+  }
+
+  function openQuote(key) {
+    var p = Q_PRODUCTS[key];
+    if (!p) { if (window.console) console.warn("openQuote: unknown product key", key); return; }
+    current = p;
+    $("qInQty").value = 1;
+    $("qSent").className = "hidden";
+    render();
+    $("quoteModal").classList.add("open");
+    document.body.style.overflow = "hidden";
+    $("quoteModal").scrollTop = 0;
+  }
+  function closeQuote() {
+    $("quoteModal").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  function showSent() {
+    note("Saved your PDF? Tap <strong>Send to admin on WhatsApp</strong>. Your details, product, quantity, price and warranty are already typed into the message — just press send.");
+    $("qWa").className = QA_WA_CLASS + " ring-4 ring-green-300";
+  }
+  function printQuote() {
+    var w = $("qFrame").contentWindow;
+    w.onafterprint = showSent;          // fires when the save/print dialog closes
+    w.focus();
+    w.print();
+    showSent();                         // fallback for browsers that return straight away
+  }
+
+  var QA_WA_CLASS = "bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5 rounded transition inline-block text-center";
+  var INPUT_CLASS = "mt-1 w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400";
+  function init() {
+    if ($("quoteModal")) return;
+    var style = document.createElement("style");
+    style.textContent = "#quoteModal{display:none;z-index:99999;color:#0f172a}#quoteModal.open{display:flex}#quoteModal input{color:#111827;background:#fff}";
+    document.head.appendChild(style);
+
+    var wrap = document.createElement("div");
+    wrap.id = "quoteModal";
+    wrap.className = "fixed inset-0 z-50 bg-black/60 items-start justify-center overflow-y-auto p-3 sm:p-6";
+    wrap.setAttribute("role", "dialog");
+    wrap.setAttribute("aria-modal", "true");
+    wrap.setAttribute("aria-labelledby", "quoteTitle");
+    wrap.innerHTML =
+      '<div class="relative bg-white rounded-xl shadow-2xl w-full max-w-4xl my-auto overflow-hidden">' +
+        '<div class="flex items-center justify-between px-5 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white">' +
+          '<h2 id="quoteTitle" class="font-bold text-lg">Your quotation</h2>' +
+          '<button type="button" id="qClose" aria-label="Close quotation" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 text-xl leading-none">&times;</button>' +
+        '</div>' +
+        '<div class="px-5 pt-4">' +
+          '<p class="text-xs text-gray-500 mb-2">Enter your details and they appear on the quotation below.</p>' +
+          '<div class="grid sm:grid-cols-4 gap-3">' +
+            '<label class="block"><span class="text-xs text-gray-500">Name</span><input id="qInName" type="text" placeholder="Your name" autocomplete="name" class="' + INPUT_CLASS + '"></label>' +
+            '<label class="block"><span class="text-xs text-gray-500">Phone</span><input id="qInPhone" type="tel" placeholder="03XX XXXXXXX" autocomplete="tel" class="' + INPUT_CLASS + '"></label>' +
+            '<label class="block"><span class="text-xs text-gray-500">Email</span><input id="qInEmail" type="email" placeholder="you@example.com" autocomplete="email" class="' + INPUT_CLASS + '"></label>' +
+            '<label class="block"><span class="text-xs text-gray-500">Quantity</span><input id="qInQty" type="number" min="1" value="1" class="' + INPUT_CLASS + '"></label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="px-5 py-4"><div class="overflow-x-auto bg-gray-100 border rounded p-2">' +
+          '<iframe id="qFrame" title="Quotation preview" class="block mx-auto bg-white" style="width:794px;max-width:none;height:900px;border:0;"></iframe>' +
+        '</div></div>' +
+        '<div id="qSent" class="hidden"></div>' +
+        '<div class="flex flex-wrap gap-3 justify-center px-5 pb-5">' +
+          '<button type="button" id="qPrint" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2.5 rounded transition">Print / Save as PDF</button>' +
+          '<a id="qWa" href="#" target="_blank" rel="noopener" class="' + QA_WA_CLASS + '">Send to admin on WhatsApp</a>' +
+          '<button type="button" id="qClose2" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-6 py-2.5 rounded transition">Close</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(wrap);
+
+    ["qInName", "qInPhone", "qInEmail", "qInQty"].forEach(function (id) {
+      $(id).addEventListener("input", function () { clearTimeout(timer); timer = setTimeout(render, 300); });
+    });
+    $("qClose").addEventListener("click", closeQuote);
+    $("qClose2").addEventListener("click", closeQuote);
+    $("qPrint").addEventListener("click", printQuote);
+    wrap.addEventListener("click", function (e) { if (e.target === wrap) closeQuote(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeQuote(); });
+  }
+
+  window.openQuote = openQuote;
+  window.closeQuote = closeQuote;
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
+
+</script>
+</body>
+</html>
